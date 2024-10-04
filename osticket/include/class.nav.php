@@ -137,7 +137,7 @@ class StaffNav {
             }
             $this->tabs['tasks'] = array('desc'=>__('Tasks'), 'href'=>'tasks.php', 'title'=>__('Task Queue'));
             $this->tabs['tickets'] = array('desc'=>__('Tickets'),'href'=>'tickets.php','title'=>__('Ticket Queue'));
-
+            $this->tabs['dictaminacions'] = array('desc'=>__('Dictaminación'),'href'=>'dictaminacion.php','title'=>__('Dictaminacion'));
             $this->tabs['kbase'] = array('desc'=>__('Knowledgebase'),'href'=>'kb.php','title'=>__('Knowledgebase'));
             if (!is_null($this->getRegisteredApps()))
                 $this->tabs['apps']=array('desc'=>__('Applications'),'href'=>'apps.php','title'=>__('Applications'));
@@ -255,6 +255,7 @@ class AdminNav extends StaffNav{
                     $subnav[]=array('desc'=>__('Schedules'),'href'=>'schedules.php','iconclass'=>'lists');
                     $subnav[]=array('desc'=>__('API'),'href'=>'apikeys.php','iconclass'=>'api');
                     $subnav[]=array('desc'=>__('Pages'), 'href'=>'pages.php','title'=>'Pages','iconclass'=>'pages');
+                    $subnav[]=array('desc'=>__('Dictaminación'),'href'=>'dictaminacion_admin.php','iconclass'=>'dictaminacions');
                     $subnav[]=array('desc'=>__('Forms'),'href'=>'forms.php','iconclass'=>'forms');
                     $subnav[]=array('desc'=>__('Lists'),'href'=>'lists.php','iconclass'=>'lists');
                     $subnav[]=array('desc'=>__('Plugins'),'href'=>'plugins.php','iconclass'=>'api');
