@@ -1,7 +1,7 @@
 use osticket;
 
 CREATE TABLE
-    IF NOT EXISTS ost_dictaminacion (
+    IF NOT EXISTS ostck_dictaminacion (
         id_dictaminacion INT AUTO_INCREMENT PRIMARY KEY,
         id_staff INT NOT NULL,
         id_ticket INT NOT NULL,
@@ -10,14 +10,14 @@ CREATE TABLE
     ) ENGINE = InnoDB;
 
 CREATE TABLE
-    IF NOT EXISTS ost_dictaminacion_asignaciones (
+    IF NOT EXISTS ostck_dictaminacion_asignaciones (
         id_Asignacion INT AUTO_INCREMENT PRIMARY KEY,
         id_ticket INT NOT NULL,
         id_staff INT NOT NULL
     ) ENGINE = InnoDB;
 
 CREATE TABLE
-    IF NOT EXISTS ost_dictaminacion_respuestas (
+    IF NOT EXISTS ostck_dictaminacion_respuestas (
         id_respuesta INT AUTO_INCREMENT PRIMARY KEY,
         id_staff INT NOT NULL,
         id_ticket INT NOT NULL,
