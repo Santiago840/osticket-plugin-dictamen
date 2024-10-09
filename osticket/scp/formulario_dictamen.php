@@ -96,6 +96,9 @@ function volver(){
     window.location.href='dictaminacion.php';
 }
 
+function irConfiguracion(){
+	window.location.href='configuracion_dictamen.php';
+}
 /*function confirmarEnvio() {
     return confirm("¿Está seguro de guardar? No se podrán efectuar cambios una vez realizada la operación.");
 }*/
@@ -106,7 +109,6 @@ function volver(){
     <input type="hidden" name="ticket_id" value="<?php echo $ticket_id; ?>">
     <?php 
     csrf_token(); 
-    
     // Rehacer la consulta para obtener las preguntas
     $preguntas = db_query($sql_form);
     echo "<table>";

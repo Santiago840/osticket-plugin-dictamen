@@ -106,7 +106,8 @@ function editar(ticket_id) {
     </tbody>
 </table>
 
-
+</br>
+<input type="button" value="Configuración" onclick="irConfiguracion()">
 
 <?php
 include(STAFFINC_DIR . 'footer.inc.php');
