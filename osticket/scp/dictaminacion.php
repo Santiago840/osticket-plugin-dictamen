@@ -9,7 +9,7 @@ require_once(STAFFINC_DIR . 'header.inc.php');
 $agent_id = $thisstaff->getId();
 global $agent_id;
 
-$sql = "SELECT t.ticket_id, t.number FROM " . $TABLE_PREFIX . "ticket t WHERE t.ticket_id IN (SELECT da.id_ticket FROM"  . $TABLE_PREFIX . "dictaminacion_asignaciones da WHERE da.id_staff ='$agent_id')";
+$sql = "SELECT t.ticket_id, t.number FROM ost_ticket t WHERE t.ticket_id IN (SELECT da.id_ticket FROM"  . $TABLE_PREFIX . "dictaminacion_asignaciones da WHERE da.id_staff ='$agent_id')";
 $res = db_query($sql);
 
 ?>
@@ -121,7 +121,7 @@ if (db_num_rows($res) > 0) {
 
 				$preguntas = [];
 
-				$sql_form = "SELECT * FROM " . $TABLE_PREFIX . "dictaminacion_respuestas WHERE id_ticket=$ticket_id AND id_staff = $agent_id ORDER BY pregunta";
+				$sql_form = "SELECT * FROM ost_dictaminacion_respuestas WHERE id_ticket=$ticket_id AND id_staff = $agent_id ORDER BY pregunta";
 				$result_form = db_query($sql_form);
 
 				while ($fila_preguntas = db_fetch_array($result_form)) {
@@ -129,7 +129,7 @@ if (db_num_rows($res) > 0) {
 				}
 				$preguntas_json = json_encode($preguntas);
 
-				$sql_estado = "SELECT * FROM " . $TABLE_PREFIX . "dictaminacion WHERE id_staff = $agent_id AND id_ticket = $ticket_id AND id_estado=1";
+				$sql_estado = "SELECT * FROM ost_dictaminacion WHERE id_staff = $agent_id AND id_ticket = $ticket_id AND id_estado=1";
 				$estado = db_query($sql_estado);
 				echo "<tr>";
 				echo "<td><a href='formulario_dictamen.php?id=" . $ticket_id . "'>#" . $ticket_number . "</a></td>";

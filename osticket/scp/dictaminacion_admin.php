@@ -30,7 +30,7 @@ function editar(ticket_id) {
     </thead>
     <tbody>
         <?php
-		$sql = "SELECT ticket_id, number FROM " . $TABLE_PREFIX . "ticket";
+		$sql = "SELECT ticket_id, number FROM ost_ticket";
 		$res = db_query($sql);
 
 		while ($row = db_fetch_array($res)) {
@@ -40,7 +40,7 @@ function editar(ticket_id) {
 			echo "<tr>";
 			echo "<td>#" . $ticket_number . "</td>";
 
-			$sql_estado = "SELECT * FROM " . $TABLE_PREFIX . "dictaminacion WHERE id_ticket=$ticket_id AND id_estado=1 AND (id_valoracion=1 OR id_valoracion=0)";
+			$sql_estado = "SELECT * FROM ost_dictaminacion WHERE id_ticket=$ticket_id AND id_estado=1 AND (id_valoracion=1 OR id_valoracion=0)";
 			$res_estado = db_query($sql_estado);
 			$num_diferencia = 0;
 			while ($diferencia = db_fetch_array($res_estado)) {
@@ -50,7 +50,7 @@ function editar(ticket_id) {
 			}
 
 			//para saber si ya esta asignado
-			$sql_asignacion = "SELECT * FROM " . $TABLE_PREFIX . "dictaminacion_asignaciones WHERE id_ticket=$ticket_id";
+			$sql_asignacion = "SELECT * FROM ost_dictaminacion_asignaciones WHERE id_ticket=$ticket_id";
 			$res_asignacion = db_query($sql_asignacion);
 
 			$deshabilitar = 'enabled';
